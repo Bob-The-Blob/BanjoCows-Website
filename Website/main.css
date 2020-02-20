@@ -1,0 +1,37 @@
+.header {
+	text-align: center;
+	font-family: pakenham;
+}
+
+.nav {
+	background-color: grey;
+	padding: 25px;
+	text-align: center;
+	color: white;
+	font-family: pakenham;
+}
+
+body {
+	font-family: pakenham;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:active {
+	text-decoration: underline;
+}
+
+@font-face {
+	font-family: "pakenham";
+	src: url("pakenhamrg.ttf");
+}
