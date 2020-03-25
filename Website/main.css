@@ -1,6 +1,6 @@
 .header {
 	text-align: center;
-	font-family: comicsans;
+	font-family: pakenham;
 }
 
 .nav {
@@ -8,11 +8,11 @@
 	padding: 25px;
 	text-align: center;
 	color: white;
-	font-family: comicsans;
+	font-family: pakenham;
 }
 
 .main {
-	font-family: comicsans;
+	font-family: pakenham;
 	text-align: center;
 	width: 800px;
 	margin-left: auto;
@@ -36,6 +36,6 @@ a:active {
 }
 
 @font-face {
-	font-family: "comicsans";
-	src: url("COMIC.TTF");
+	font-family: "pakenham";
+	src: url("pakenhamrg.ttf");
 }
