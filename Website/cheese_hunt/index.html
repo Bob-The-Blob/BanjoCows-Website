@@ -7,7 +7,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Cheese Hunt Alpha 0.4</title>
+	<title>Cheese_Hunt Alpha 0.6</title>
 	<style type='text/css'>
 	/* Disable user selection to avoid strange bug in Chrome on Windows:
 	* Selecting a text outside the canvas, then clicking+draging would
@@ -156,7 +156,7 @@
 		archive_location_filter: function( path ) {
 			return ("archive" + path + "");
 		},
-		engine_arguments: [],
+		engine_arguments: ["--verify-graphics-calls=false",],
 		custom_heap_size: 268435456,
 		disable_context_menu: true
 	}
@@ -170,7 +170,7 @@
 		// dmengine*.wasm is hardcoded in the built JS loader for WASM,
 		// we need to replace it here with the correct project name.
 		if (path == "dmengine.wasm" || path == "dmengine_release.wasm" || path == "dmengine_headless.wasm") {
-			path = "CheeseHunt.wasm";
+			path = "Cheese_Hunt.wasm";
 		}
 		return scriptDirectory + path;
 	};
@@ -231,9 +231,9 @@
 		var engineJS = document.createElement('script');
 		engineJS.type = 'text/javascript';
 		if (Module['isWASMSupported']) {
-			engineJS.src = 'CheeseHunt_wasm.js';
+			engineJS.src = 'Cheese_Hunt_wasm.js';
 		} else {
-			engineJS.src = 'CheeseHunt_asmjs.js';
+			engineJS.src = 'Cheese_Hunt_asmjs.js';
 		}
 		document.head.appendChild(engineJS);
 	}
@@ -241,5 +241,29 @@
 	<script id='engine-start' type='text/javascript'>
 		load_engine();
 	</script>
-</body>
+	
+	<p id="test"></p>
+	
+	<script type='text/javascript'>
+	var score = 0
+	document.getElementById("test").innerHTML =
+	score;
+	
+	function reset() {
+	score = 0;
+	document.getElementById("test").innerHTML =
+	score;
+	}
+	
+	function scupdate() {
+	score = score + 1;
+	}
+	
+	function highscore() {
+	document.getElementById("test").innerHTML =
+	score;
+	localStorage.setItem("score", score)
+	}
+	</script>
+	</body>
 </html>

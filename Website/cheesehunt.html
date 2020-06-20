@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="icon" href="BanjoCows Logo.ico">
+	<meta charset="UTF-8">
+	<meta name="description" content="Cheese Hunt is a game where you play as a mouse and try to survive while the cat is constantly trying to kill you.">
+	<title>Cheese Hunt</title>
+	<link rel="stylesheet" href="main.css">
+	
+</head>
+
+<body>
+
+	<div class="header">
+	<h1>BanjoCows</h1>
+	</div>
+	
+	<div class="nav">
+	<a class="nav" href="index.html"><b>Home</b></a>
+	<a class="nav" href="cheesehunt.html"><b>Cheese Hunt</b></a>
+	<a class="nav" href="news.html"><b>News</b></a>
+	<a class="nav" href="support.html"><b>Support</b></a>
+	</div>
+	
+	<div class="main">
+	<h1>Cheese Hunt</h1>
+	<p>Cheese Hunt is the frist game by BanjoCows. It is an indie game where you, as a mouse, try to collect as much score as possible while the cat is trying to kill you. It is a simple game at its core, but with things like power ups and the leveling system, there is variety in playstyle. Cheese Hunt started in 2018 as a side project in the summer. The first version was finished in October of that year. Since then, I have been working on the game every now and then.</p>
+	
+	<h1>Alpha 0.5 Change Log</h1>
+	<p>Alpha 0.5, or the Score Rework Update, was released January 26th, 2020. The main focus was to rework the way score was callculated and corrected. It fundimentaly changed the game and added variety in playstyle while giving you more freedom to play however you want.</p>
+	</div>
+	
+	<div class="changelog">
+	<p>Alpha 0.5 (Score Rework Update)</br>
+-Reworked the way score is calculated</br>
+-Cheese adds 10 score base</br>
+-Getting a power up adds 40 score base</br>
+-You gain 1 score base every 5 seconds for surviving</br>
+-You gain 100 score base for leveling up</br>
+-You level up everytime you collect cheese</br>
+-There is no way to see the cheese you have but the game keeps that information</br>
+-2x score doubles all ways to get score, not just cheese</br>
+-Did some backend changes to make the graphics appear stonger and less blurry</p>
+	</div>
+	
+	<div class="cheese_hunt">
+	<h1>Play Here</h1>
+	<center><iframe src="cheese_hunt/index.html" width="640" height="360"frameBorder="0"></iframe></center>
+	</div>
+
+	<div class="changelog">
+	<h1>Score Test</h1>
+	<p id="test"></p>
+	
+	<h1>Leaderboard (Currently in development)</h1>
+	<p id="hs1"></p>
+	<p id="hs2"></p>
+	<p id="hs3"></p>
+	<p id="hs4"></p>
+	<p id="hs5"></p>
+	
+	<h1>Controls</h1>
+	<p>A and Left Arrow - Turn Left</br>
+	D and Right Arrow - Turn Right</br>
+	W and Up Arrow - Forward</br></p>
+	<h1>Score</h1>
+	<p>Surviving 5 Seconds - 2</br>
+	Cheese - 20</br>
+	Power Up - 40</br>
+	Level Up - 100</br>
+	You level up every 10 cheese you collect</p>
+	</div>
+	
+	<div class="main">
+	<h1>Download</h1>
+	<p>If you wish to download this game and play it offline, you can go to out Itch.io page and dowenload it from <a href="https://banjocows.itch.io/cheese-hunt">there</a>. If you don't want to download it from there, don't worry. A download link will be added here at some point in the future.</p>
+	</div>
+	
+	<script type='text/javascript'>
+	var h1 = 0
+	var h2 = 0
+	var h3 = 0
+	var h4 = 0
+	var h5 = 0
+	var n1 = "Joe"
+	var n2 = "Job"
+	var n3 = "Yeet"
+	var n4 = "Bob"
+	var n5 = "Ai"
+	document.getElementById("hs1").innerHTML =
+	"1: " + n1 + " " + h1;
+	document.getElementById("hs2").innerHTML =
+	"2: " + n2 + " " + h2;
+	document.getElementById("hs3").innerHTML =
+	"3: " + n3 + " " + h3;
+	document.getElementById("hs4").innerHTML =
+	"4: " + n4 + " " + h4;
+	document.getElementById("hs5").innerHTML =
+	"5: " + n5 + " " + h5;
+	var cscore = 0
+	var getscore = setInterval(getscore, 1000)
+	
+	function updatelb1() {
+		h5 = h4
+		h4 = h3
+		h3 = h2
+		h2 = h1
+		h1 = cscore
+		n5 = n4
+		n4 = n3
+		n3 = n2
+		n2 = n1
+		n1 = prompt("You got on the leaderboard! What is your name?", "Joe")
+		cscore = 0
+		document.getElementById("hs1").innerHTML =
+		"1: " + n1 + " " + h1;
+		document.getElementById("hs2").innerHTML =
+		"2: " + n2 + " " + h2;
+		document.getElementById("hs3").innerHTML =
+		"3: " + n3 + " " + h3;
+		document.getElementById("hs4").innerHTML =
+		"4: " + n4 + " " + h4;
+		document.getElementById("hs5").innerHTML =
+		"5: " + n5 + " " + h5;
+	}
+	function updatelb2() {
+		h5 = h4
+		h4 = h3
+		h3 = h2
+		h2 = cscore
+		n5 = n4
+		n4 = n3
+		n3 = n2
+		n2 = prompt("You got on the leaderboard! What is your name?", "Joe")
+		cscore = 0
+		document.getElementById("hs1").innerHTML =
+		"1: " + n1 + " " + h1;
+		document.getElementById("hs2").innerHTML =
+		"2: " + n2 + " " + h2;
+		document.getElementById("hs3").innerHTML =
+		"3: " + n3 + " " + h3;
+		document.getElementById("hs4").innerHTML =
+		"4: " + n4 + " " + h4;
+		document.getElementById("hs5").innerHTML =
+		"5: " + n5 + " " + h5;
+	}
+	function updatelb3() {
+		h5 = h4
+		h4 = h3
+		h3 = cscore
+		n5 = n4
+		n4 = n3
+		n3 = prompt("You got on the leaderboard! What is your name?", "Joe")
+		cscore = 0
+		document.getElementById("hs1").innerHTML =
+		"1: " + n1 + " " + h1;
+		document.getElementById("hs2").innerHTML =
+		"2: " + n2 + " " + h2;
+		document.getElementById("hs3").innerHTML =
+		"3: " + n3 + " " + h3;
+		document.getElementById("hs4").innerHTML =
+		"4: " + n4 + " " + h4;
+		document.getElementById("hs5").innerHTML =
+		"5: " + n5 + " " + h5;
+	}
+	function updatelb4() {
+		h5 = h4
+		h4 = cscore
+		n5 = n4
+		n4 = prompt("You got on the leaderboard! What is your name?", "Joe")
+		cscore = 0
+		document.getElementById("hs1").innerHTML =
+		"1: " + n1 + " " + h1;
+		document.getElementById("hs2").innerHTML =
+		"2: " + n2 + " " + h2;
+		document.getElementById("hs3").innerHTML =
+		"3: " + n3 + " " + h3;
+		document.getElementById("hs4").innerHTML =
+		"4: " + n4 + " " + h4;
+		document.getElementById("hs5").innerHTML =
+		"5: " + n5 + " " + h5;
+	}
+	function updatelb5() {
+		h5 = cscore
+		n5 = prompt("You got on the leaderboard! What is your name?", "Joe")
+		cscore = 0
+		document.getElementById("hs1").innerHTML =
+		"1: " + n1 + " " + h1;
+		document.getElementById("hs2").innerHTML =
+		"2: " + n2 + " " + h2;
+		document.getElementById("hs3").innerHTML =
+		"3: " + n3 + " " + h3;
+		document.getElementById("hs4").innerHTML =
+		"4: " + n4 + " " + h4;
+		document.getElementById("hs5").innerHTML =
+		"5: " + n5 + " " + h5;
+	}
+	function savescore() {
+	savef = {"name1":n1, "score1":h1, "name2":n2, "score2":h2, "name3":n3, "score3":h3, "name4":n4, "score4":h4, "name5":n5, "score5":h5}
+	strsave = JSON.stringify(savef)
+	}
+	function getscore() {
+		cscore = window.localStorage.getItem("score")
+		localStorage.removeItem("score")
+		if (cscore > h1) {
+		updatelb1()
+		savescore()
+		} else if (cscore > h2) {
+		updatelb2()
+		savescore()
+		} else if (cscore > h3) {
+		updatelb3()
+		savescore()
+		} else if (cscore > h4) {
+		updatelb4()
+		savescore()
+		} else if (cscore > h5) {
+		updatelb5()
+		savescore()
+		}
+	}
+	</script>
+	
+</body>
+
+</html>
